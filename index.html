@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askepicard - Feedback JPO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎴 Askepicard</h1>
+            <p class="subtitle">Votre avis nous intéresse!</p>
+        </div>
+
+        <form id="feedbackForm" class="feedback-form">
+            <div class="form-group">
+                <label for="name">Votre prénom</label>
+                <input type="text" id="name" name="name" placeholder="Ex: Alex" required>
+            </div>
+
+            <div class="form-group">
+                <label class="rating-label">
+                    ⚙️ Graphiques
+                    <span class="rating-value" id="graphicsValue">0</span>/5
+                </label>
+                <div class="star-rating" id="graphicsRating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="rating-label">
+                    🎮 Jouabilité
+                    <span class="rating-value" id="gameplayValue">0</span>/5
+                </label>
+                <div class="star-rating" id="gameplayRating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="rating-label">
+                    ✨ Originalité
+                    <span class="rating-value" id="originalityValue">0</span>/5
+                </label>
+                <div class="star-rating" id="originalityRating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="improvement">Quoi améliorer?</label>
+                <textarea id="improvement" name="improvement" placeholder="Vos suggestions..." rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                📤 Envoyer mon feedback
+            </button>
+
+            <div id="message" class="message"></div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
