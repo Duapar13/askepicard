@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askepicard - QR Code</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 100%);
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(30, 41, 59, 0.8);
+            border: 2px solid #8b5cf6;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .qr-frame {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .qr-frame img {
+            display: block;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .info {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid #8b5cf6;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .info h3 {
+            color: #8b5cf6;
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .instructions {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            text-align: left;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .instructions h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            color: #cbd5e1;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .button-download {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .button-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .qr-frame img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎴 Askepicard</h1>
+        <p class="subtitle">Scannez ce QR code pour donner votre avis!</p>
+
+        <div class="qr-frame">
+            <img src="qr-code.png" alt="QR Code pour le feedback">
+        </div>
+
+        <div class="info">
+            <h3>📱 Ou visitez directement</h3>
+            <p>https://duapar13.github.io/askepicard/</p>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Comment donner votre avis?</h3>
+            <ol>
+                <li>Scannez le QR code avec votre téléphone</li>
+                <li>Entrez votre prénom</li>
+                <li>Évaluez les 3 critères avec les ⭐</li>
+                <li>Partagez vos suggestions (optionnel)</li>
+                <li>Cliquez sur "Envoyer"</li>
+            </ol>
+        </div>
+
+        <p style="margin-top: 25px; color: #cbd5e1;">
+            ⏱️ Ça ne prend que <strong>30 secondes</strong>!<br>
+            💬 Votre feedback nous aide à améliorer le jeu!
+        </p>
+
+        <a href="qr-code.png" download class="button-download">
+            ⬇️ Télécharger le QR code
+        </a>
+
+        <div class="footer">
+            <p>Askepicard - Jeu de cartes stratégique 2026</p>
+            <p>JPO - Retours en temps réel sur Discord</p>
+        </div>
+    </div>
+</body>
+</html>
