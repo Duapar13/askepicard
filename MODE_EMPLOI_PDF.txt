@@ -1,0 +1,93 @@
+🎴 ASKEPICARD - Affiche QR Code
+================================================================================
+
+📋 OPTION 1: Solution manuelle (30 secondes) ⭐ RECOMMANDÉE
+================================================================================
+
+1. Ouvrir le fichier: affiche-qr.html
+   - Double-cliquez sur le fichier, OU
+   - Terminal: open affiche-qr.html
+
+2. Appuyer sur: Cmd + P (ou Ctrl + P selon OS)
+
+3. Configurations dans «Imprimer»:
+   ✓ Format de papier: A4 (ou A3 pour plus grand)
+   ✓ Orientation: Portrait
+   ✓ Marges: Réduites ou Aucune
+   ✓ Arrière-plan: ACTIVÉ ✅
+   ✓ Qualité: Meilleure/Photo
+
+4. Destination: «Enregistrer en PDF»
+
+5. Nommer: affiche-askepicard.pdf
+
+⏱️ C'est tout! 30 secondes max.
+
+================================================================================
+📸 OPTION 2: Solution automatisée avec Node.js/Puppeteer
+================================================================================
+
+Prérequis: Node.js installé (https://nodejs.org)
+
+1 Terminal - Exécuter:
+
+  npm install -g puppeteer-core
+
+2. Créer un fichier convert.js:
+
+  const puppeteer = require('puppeteer');
+  const path = require('path');
+  
+  (async () => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    const filePath = `file://${path.resolve(__dirname, 'affiche-qr.html')}`;
+    await page.goto(filePath);
+    await page.pdf({
+      path: 'affiche-askepicard.pdf',
+      format: 'A4',
+      printBackground: true,
+      margin: { top: 5, bottom: 5, left: 5, right: 5 }
+    });
+    console.log('✅ PDF créé: affiche-askepicard.pdf');
+    await browser.close();
+  })();
+
+3. Exécuter:
+  node convert.js
+
+================================================================================
+📄 OPTION 3: Utiliser LibreOffice (si installé)
+================================================================================
+
+  libreoffice --headless --convert-to pdf --outdir . affiche-qr.html
+
+→ Crée: affiche-qr.pdf
+
+================================================================================
+🖨️ RÉSULTAT FINAL
+================================================================================
+
+✅ Fichier PDF généré: affiche-askepicard.pdf (ou affiche-qr.pdf)
+
+🎨 Spécifications du PDF:
+  - Taille: A4 (21 × 29.7 cm) ou A3 (29.7 × 42 cm)
+  - Couleur: CMYK (impression couleur)
+  - Résolution: 300 DPI (haute qualité)
+  - Contient: QR code + affiche design
+
+✂️ Après génération:
+  1. Imprimer en couleur (meilleure qualité)
+  2. Découper si nécessaire
+  3. Plastifier (optionnel, pour protection)
+  4. Afficher au stand JPO
+
+================================================================================
+🎯 NEXT STEPS
+================================================================================
+
+A. Affiche A4: Cadre standard OU scotch sur stand
+B. Affiche A3: Chevalet photo (plus visible)
+C. QR code seul (qr-code.png): Scanner depuis téléphone
+
+Prêt? ✨ À vous de jouer!
